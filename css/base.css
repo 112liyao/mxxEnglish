@@ -1,0 +1,44 @@
+body,p,div,ul,li,dl,dd,dt,ol,h1,h2,h3,h4,h5,h6,form,input,span{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img{
+	border: none;
+}
+a{
+	text-align: center;
+	text-decoration: none;
+}
+a:hover{
+	color: #DB1011;
+	text-decoration: none;
+}
+body{
+	font-family: "微软雅黑";
+	/*兼容ie水平居中*/
+	text-align: center;
+}
+iframe{
+	border: none;
+}
+/*左浮动*/
+.lyLeft{
+	float: left;
+}
+/*右浮动*/
+.lyRight{
+	float: right;
+}
+/*主要宽度*/
+.lyMain{
+	width: 1200px;
+	margin: 0 auto;
+	height: auto;
+}
+/*清除浮动*/
+.clear{
+	width: 0;
+	height: 0;
+	clear: both;
+}
