@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>背诵检查</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/question.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style type="text/css">
+	body,html{width: 100%;height: 100%;overflow: hidden;}
+	body{background: url(img/bg/5.jpg) no-repeat center;background-size: cover;}
+	.lyMask{
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.3);
+		overflow: hidden;
+		
+	}
+	.lyMain{
+		width: 80%;
+		height: 90%;
+		margin: 2% auto;
+		background: rgba(255,255,255,.6);
+		text-align: left;
+		padding: 2%;
+		box-sizing: border-box;
+		border-radius: 12px;
+		box-shadow: 0 12px 12px rgba(0,0,0,.6);
+	}
+	.lyMain h1{
+		text-align: center;
+		line-height: 56px;
+	}
+	.lyQuestion{
+		line-height: 42px;
+		font-size: 28px;
+		margin-top: 36px;
+	}
+	.lyImgBox{
+		width: 80%;
+		margin: 20px auto 0;
+		display: -webkit-box; 
+	    display: -moz-box; 
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		flex-wrap: wrap;
+		height: auto;
+		font-size: 32px;
+	}
+	.lyImgBox div{
+		width: 45%;
+		height: 120px;
+		line-height: 0;	
+		margin-bottom: 24px;
+		text-align: center;
+	}
+	.mxxImg{
+		width: 30%;
+		margin: 20px auto 0;
+		line-height: 0;
+	}
+	.mxxImg img{
+		width: 100%;
+	}
+	.myAnswer{
+		cursor: pointer;
+	}
+	.myAnswer.error{
+		-webkit-animation:mxxImg 0.15s linear 5 alternate;
+		-moz-animation:mxxImg 0.15s linear 5 alternate;
+		-o-animation:mxxImg 0.15s linear 5 alternate;
+		animation:mxxImg 0.15s linear 5 alternate;
+		color: red;
+	}
+	div.myAnswer{
+		line-height: 0;
+	}
+	div.myAnswer img{
+		width: 60%;
+		height: 100%;
+		box-shadow: 0 12px 12px rgba(0,0,0,.6);
+	}
+	@-webkit-keyframes mxxImg{
+		from{
+			transform:rotate(5deg);
+			-ms-transform:rotate(5deg); 	
+			-moz-transform:rotate(5deg); 	
+			-webkit-transform:rotate(5deg); 
+			-o-transform:rotate(5deg);
+		}to{
+			transform:rotate(-5deg);
+			-ms-transform:rotate(-5deg); 	
+			-moz-transform:rotate(-5deg); 
+			-webkit-transform:rotate(-5deg); 
+			-o-transform:rotate(-5deg);
+		}
+	}
+	@-moz-keyframes mxxImg{from{
+			transform:rotate(5deg);
+			-ms-transform:rotate(5deg); 	
+			-moz-transform:rotate(5deg); 	
+			-webkit-transform:rotate(5deg); 
+			-o-transform:rotate(5deg);
+		}to{
+			transform:rotate(-5deg);
+			-ms-transform:rotate(-5deg); 	
+			-moz-transform:rotate(-5deg); 
+			-webkit-transform:rotate(-5deg); 
+			-o-transform:rotate(-5deg);
+		}
+	}
+	@-o-keyframes mxxImg{from{
+			transform:rotate(5deg);
+			-ms-transform:rotate(5deg); 	
+			-moz-transform:rotate(5deg); 	
+			-webkit-transform:rotate(5deg); 
+			-o-transform:rotate(5deg);
+		}to{
+			transform:rotate(-5deg);
+			-ms-transform:rotate(-5deg); 	
+			-moz-transform:rotate(-5deg); 
+			-webkit-transform:rotate(-5deg); 
+			-o-transform:rotate(-5deg);
+		}
+	}
+	@keyframes mxxImg{from{
+			transform:rotate(5deg);
+			-ms-transform:rotate(5deg); 	
+			-moz-transform:rotate(5deg); 	
+			-webkit-transform:rotate(5deg); 
+			-o-transform:rotate(5deg);
+		}to{
+			transform:rotate(-5deg);
+			-ms-transform:rotate(-5deg); 	
+			-moz-transform:rotate(-5deg); 
+			-webkit-transform:rotate(-5deg); 
+			-o-transform:rotate(-5deg);
+		}
+	}
+	#audio_btn{
+		position: fixed;
+		left: 5%;
+		top: 5%;
+	}
+</style>
+<body>
+	<div class="lyMask">
+		<div class="lyMain">
+			<h1>根据要求完成任务</h1>
+			<div class="lyQuestion"></div>
+			<div class="mxxImg"><img src=""/></div>
+			<div class="lyImgBox">
+				<div class="myAnswer"><img src="" alt="" /></div>
+				<div class="myAnswer"><img src="" alt="" /></div>
+				<div class="myAnswer"><img src="" alt="" /></div>
+				<div class="myAnswer"><img src="" alt="" /></div>
+				<span class="myAnswer"></span>
+				<span class="myAnswer"></span>
+				<span class="myAnswer"></span>
+				<span class="myAnswer"></span>
+			</div>
+		</div>
+	</div>
+	<div id="audio_btn">
+		<audio src="audio/success.mp3" id="media" preload=""></audio>
+	</div>
+</body>
+</html>
